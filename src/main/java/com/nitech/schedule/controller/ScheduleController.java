@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.UUID;
 
 @RestController
@@ -20,13 +21,13 @@ public class ScheduleController {
 
     @GetMapping("/contact")
     @ApiOperation(value="Return all contact")
-    public ResponseEntity<?> getAllContact(){
-        return ResponseEntity.ok(this.contactService.getAllContact());
+    public ResponseEntity<?> getAllContact() throws IOException {
+       return ResponseEntity.ok(this.contactService.getAllContact());
     }
 
     @GetMapping("/contact/{id}")
     @ApiOperation(value="Return contact by id")
-    public ResponseEntity<?> getContactById(@PathVariable(value="id") UUID id){
+    public ResponseEntity<?> getContactById(@PathVariable(value="id") UUID id) throws IOException {
         return ResponseEntity.ok(this.contactService.geContactById(id));
     }
 

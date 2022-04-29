@@ -13,14 +13,9 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Contact {
 
-    private UUID id;
+    private UUID uuid;
     private String name;
     private String email;
     private String url;
     private String whats;
-
-    public String toString() {
-        return "CsvPessoa{name='" + name + "\', email=" + email + "\'}";
-    }
-
 }
